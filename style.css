@@ -1,5 +1,4 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css');
-@import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro&display=swap" rel="stylesheet'>);
 
 * {
     box-sizing: border-box;
@@ -7,16 +6,24 @@
 
 /* what is this? */
 html, body {
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Source Serif Pro', serif;
 }
 
-p {
+h1 {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 70px;
+    color: #FF69B4
+}
+
+p, h2 {
     line-height: 2em;
+    font-family: Arial;
 }
 
 /* line spacing in text area */
-.containter {
+.container {
     max-width: 800px;
     margin: 0 auto;
     padding: 10px;
@@ -37,9 +44,9 @@ img {
 .dot {
     width: 20px;
     height: 20px;
-    border-radius: 50%
-        /* makes a circle */
-        position: absolute;
+    border-radius: 50%;
+    /* makes a circle */
+    position: absolute;
     /* can be placed anywhere */
     display: block;
     /* ? */
@@ -55,7 +62,9 @@ img {
 }
 
 .dot .innner {
-    width: 100% height: 100% opacity: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
     text-align: center;
     position: absolute;
     transition: opacity 1s ease-in-out;
@@ -64,4 +73,87 @@ img {
 /* this is for the actual container of the content? after dot expands? why do we do ease-in-out-again? */
 .dot .inner .content {
     top: 50%;
+    /* does this center it? */
+    transform: translateY(-50%);
+    /* does this center it top-bottom? */
+    position: absolute;
+    width: 100%;
+    padding: 40px;
 }
+
+.dot .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #FFF;
+}
+
+.dot .close:after {
+    font-family: Source Serif Pro;
+    font-size: 1.5em;
+    content: "\f00d";
+}
+
+.dot.orange {
+    background-color: #FF6319
+}
+
+.dot.blue {
+    background-color: #0039A6
+}
+
+.dot.green {
+    background-color: #6CBE45
+}
+
+.dot.brown {
+    background-color: #996633
+}
+
+.dot.yellow {
+    background-color: #FCCC0A
+}
+
+.dot.topBar {
+    right: 75%;
+    bottom: 77%;
+}
+
+.dot.windowPanel {
+    top: 33%;
+    right: 13%;
+}
+
+.dot.seatSpace {
+    right: 75%;
+    bottom: 20%;
+}
+
+.dot.staticSeats {
+    right: 68%;
+    bottom: 32%;
+}
+
+.dot.emergencyCal {
+    right: 25%;
+    bottom: 70%;
+}
+
+.dot.active {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: 0;
+    z-index: 2;
+    left: 0;
+    top: 0;
+}
+
+.dot.active .inner {
+    opacity: 1;
+}
+
+@media(min-width: 681px) {}
+
+@media(min-width: 729px) {}
